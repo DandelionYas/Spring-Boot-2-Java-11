@@ -1,4 +1,4 @@
-package packt.springboot.section11.controller;
+package packt.springboot.webapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

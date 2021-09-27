@@ -1,9 +1,9 @@
-package packt.springboot.section11.config;
+package packt.springboot.webapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
-import packt.springboot.section11.model.Harvest;
+import packt.springboot.webapp.model.Harvest;
 
 import java.util.ArrayList;
 import java.util.List;

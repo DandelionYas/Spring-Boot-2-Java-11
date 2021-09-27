@@ -1,4 +1,4 @@
-package packt.springboot.section11.model;
+package packt.springboot.webapp.model;
 
 import lombok.Data;
 

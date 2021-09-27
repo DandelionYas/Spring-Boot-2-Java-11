@@ -1,4 +1,4 @@
-package packt.springboot.section11.controller;
+package packt.springboot.webapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

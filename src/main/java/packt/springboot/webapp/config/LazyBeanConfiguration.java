@@ -1,4 +1,4 @@
-package packt.springboot.section11.config;
+package packt.springboot.webapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package packt.springboot.section11.controller;
+package packt.springboot.webapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import packt.springboot.section11.model.Harvest;
+import packt.springboot.webapp.model.Harvest;
 
 import java.time.LocalDate;
 import java.util.List;
