@@ -1,7 +1,9 @@
 package packt.springboot.webapp.config;
 
+import org.springframework.boot.web.servlet.view.MustacheViewResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
@@ -81,5 +83,17 @@ public class FarmUpViewResolverConfig {
         templateResolver.setCharacterEncoding("UTF-8");
  
         return templateResolver;
+    }
+
+    // Mustache ViewResolver Configuration
+    @Bean
+    public ViewResolver mstViewResolver(ResourceLoader resourceLoader) {
+        MustacheViewResolver mustacheViewResolver
+                = new MustacheViewResolver();
+        mustacheViewResolver.setPrefix("classpath:/templates/mustache/");
+        mustacheViewResolver.setSuffix(".mustache");
+        mustacheViewResolver.setViewNames(new String[] { "mst_*" });
+        mustacheViewResolver.setOrder(2);
+        return mustacheViewResolver;
     }
 }

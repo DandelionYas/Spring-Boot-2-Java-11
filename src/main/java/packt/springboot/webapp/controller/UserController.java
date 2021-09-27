@@ -13,6 +13,13 @@ public class UserController {
 	@Autowired
 	private String webmaster;
 
+	@GetMapping("/farm/users")
+	public String listUsers(Model model) {
+		model.addAttribute("users", Arrays.asList("sjctrags", "root", "guest"));
+		model.addAttribute("webmaster", webmaster);
+		return "mst_users_list";
+	}
+
 	@GetMapping("/farm/providers")
 	public String listProviders(Model model) {
 		model.addAttribute("users", Arrays.asList("sjctrags", "root", "guest"));
