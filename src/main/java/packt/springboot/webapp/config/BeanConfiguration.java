@@ -3,7 +3,7 @@ package packt.springboot.webapp.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
-import packt.springboot.webapp.model.Harvest;
+import packt.springboot.webapp.model.HarvestForm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public List<Harvest> dbHarvest() {
+    public List<HarvestForm> dbHarvest() {
         return new ArrayList();
     }
 }

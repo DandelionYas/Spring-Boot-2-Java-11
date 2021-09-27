@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import packt.springboot.webapp.model.Harvest;
+import packt.springboot.webapp.model.HarvestForm;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,10 +17,10 @@ import java.util.List;
 public class HarvestFormController {
     private String projectName;
     private LocalDate localDate;
-    private List<Harvest> dbHarvest;
+    private List<HarvestForm> dbHarvest;
 
     @Autowired
-    public HarvestFormController(String projectName, LocalDate localDate, List<Harvest> dbHarvest) {
+    public HarvestFormController(String projectName, LocalDate localDate, List<HarvestForm> dbHarvest) {
         this.projectName = projectName;
         this.localDate = localDate;
         this.dbHarvest = dbHarvest;
@@ -29,20 +29,23 @@ public class HarvestFormController {
     @GetMapping
     public String initForm(Model model) {
         model.addAttribute("projName", projectName);
-        return "harvest_from";
+        model.addAttribute("harvestForm", new HarvestForm());
+        return "ftl_harvest_form";
     }
 
     @PostMapping
     public String submitForm(Model model, @RequestParam String name,
-                             @RequestParam Integer quality, @RequestParam Float price) {
+                             @RequestParam Integer qty,
+                             @RequestParam Float price) {
         model.addAttribute("projName", projectName);
-        model.addAttribute("lDate", localDate);
-        Harvest product = new Harvest();
-        product.setName(name);
-        product.setQuality(quality);
-        product.setPrice(price);
-        dbHarvest.add(product);
+        model.addAttribute("ldate", localDate);
+        HarvestForm prod = new HarvestForm();
+        prod.setName(name);
+        prod.setQty(qty);
+        prod.setPrice(price);
+
+        dbHarvest.add(prod);
         model.addAttribute("dbHarvest", dbHarvest);
-        return "harvest_list";
+        return "ftl_harvest_list";
     }
 }

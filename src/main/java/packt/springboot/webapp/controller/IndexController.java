@@ -1,15 +1,23 @@
 package packt.springboot.webapp.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequestMapping("/farm")
 public class IndexController {
 
-    @GetMapping("/welcome")
-    public String welcome() {
-        return "Welcome to FarmUp! Let us message, harvest and enjoy our gains!";
+    @Autowired
+    private String webmaster;
+
+    @GetMapping
+    public String welcome(Model model) {
+        model.addAttribute("banner", "Welcome to FarmUp!\n"
+                + "Let us manage, harvest, and enjoy our gains!");
+        model.addAttribute("webmaster", webmaster);
+        return "th_index";
     }
 }
