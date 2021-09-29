@@ -1,4 +1,4 @@
-package packt.springboot.webapp.controller;
+package packt.springboot.webapp.exception;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
+ * Final Solution for unexpected runtime exceptions:
+ *
  * Implement Custom error page for your application
  * Set server.error.whitelabel.enabled = false
  */

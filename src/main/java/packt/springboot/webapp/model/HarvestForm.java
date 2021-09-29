@@ -12,8 +12,8 @@ public class HarvestForm {
 	private Float price;
 	private String location;
 	private String description;
-	private boolean status;
-	private LocalDate deliveryDate;
+	private String status;
+	private String deliveryDate;
 	private String type;
 	private String owner;
 }

@@ -1,4 +1,4 @@
-package packt.springboot.webapp.advice;
+package packt.springboot.webapp.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import packt.springboot.webapp.exception.SignupFormException;
 
 /**
+ * Final exception handling mechanism for business exceptions:
+ *
  * An Interceptor class that contains exception handlers
  * Its exception handlers are annotated with @ResponseStatus, @ExceptionHandler, @RequestMapping
  * Manages Exception at the web application level

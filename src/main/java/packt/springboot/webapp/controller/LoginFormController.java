@@ -22,10 +22,11 @@ public class LoginFormController {
     }
 
     @PostMapping("/login/auth")
-    public String loginUser(RedirectAttributes flashAtts, @RequestParam String username,
-                            @RequestParam String password) {
-        flashAtts.addAttribute("username", username);
-        flashAtts.addAttribute("password", password);
+    public String loginUser(@RequestParam String username,
+                            @RequestParam String password,
+                            RedirectAttributes redirectAttributes) {
+        redirectAttributes.addAttribute("username", username);
+        redirectAttributes.addAttribute("password", password);
         return "redirect:/farm/admin/menu";
     }
 

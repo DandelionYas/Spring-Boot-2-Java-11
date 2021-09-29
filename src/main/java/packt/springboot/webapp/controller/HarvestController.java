@@ -19,7 +19,7 @@ public class HarvestController {
 	
 	@Autowired
 	private String projectName;
-	
+
 	@GetMapping("/list")
 	public String listHarvest(Model model) {
 		model.addAttribute("projName", projectName);
@@ -31,9 +31,9 @@ public class HarvestController {
 		h1.setQty(100);
 		h1.setLocation("SM Light");
 		h1.setType("Fruit");
-		h1.setDeliveryDate(LocalDate.now());
+		h1.setDeliveryDate("June 22, 2020");
 		h1.setDescription("White fruits...");
-		h1.setStatus(true);
+		h1.setStatus("true");
 		h1.setOwner("Sherwin");
 		
 		dbHarvest.add(h1);
